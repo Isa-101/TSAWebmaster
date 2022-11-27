@@ -1,22 +1,109 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" dir="ltr">
 <head>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, intital-scale=1.0">
     <title> TSAWEBMASTER </title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
 </head>
 <body>
-    <video autoplay loop muted plays-inline class="back-video"> 
-        <source src="Img/Strars.mp4" type="video/mp4"> 
-    </video>
-        <header>
-            <img src="Img/logo2.PNG" class="logo">
-            <ul>
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Space</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
+
+    <header>
+        <a href="#" class="Logo"> <img src="" alt=""></a>
+        <div class="menu-btn"></div>
+        <div class="navigation">
+            <div class="navigation-items">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Explore</a>
+                <a href="#">Shop</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
     </header>
+    <section class="home">
+        <video class="video-slide active" src="Img/Strars.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="Img/Solar System 2.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="Img/CG Animation Of Astronauts In Space 3.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="Img/Space Shuttle Launch 4.mp4" autoplay muted loop></video>
+        <video class="video-slide" src="Img/pexels-video-kickstarter 5.mp4" autoplay muted loop></video>
+        <div class="content active">
+            <h1>Wonderful.<br><span>Space</span></h1>
+            <p> General relativity has passed many years of observational tests, from Eddington’s measurement(opens in new tab) of the deflection of starlight by the Sun in 1919 to the recent detection of gravitational waves(opens in new tab). However, gaps in our understanding start to appear when we try to apply it to extremely small distances, where the laws of quantum mechanics operate(opens in new tab), or when we try to describe the entire universe.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>About.<br><span>Space</span></h1>
+            <p> General relativity has passed many years of observational tests, from Eddington’s measurement(opens in new tab) of the deflection of starlight by the Sun in 1919 to the recent detection of gravitational waves(opens in new tab). However, gaps in our understanding start to appear when we try to apply it to extremely small distances, where the laws of quantum mechanics operate(opens in new tab), or when we try to describe the entire universe.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Explore.<br><span>Space</span></h1>
+            <p> General relativity has passed many years of observational tests, from Eddington’s measurement(opens in new tab) of the deflection of starlight by the Sun in 1919 to the recent detection of gravitational waves(opens in new tab). However, gaps in our understanding start to appear when we try to apply it to extremely small distances, where the laws of quantum mechanics operate(opens in new tab), or when we try to describe the entire universe.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Shop.<br><span>Space</span></h1>
+            <p> General relativity has passed many years of observational tests, from Eddington’s measurement(opens in new tab) of the deflection of starlight by the Sun in 1919 to the recent detection of gravitational waves(opens in new tab). However, gaps in our understanding start to appear when we try to apply it to extremely small distances, where the laws of quantum mechanics operate(opens in new tab), or when we try to describe the entire universe.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="content">
+            <h1>Contact.<br><span>Space</span></h1>
+            <p> General relativity has passed many years of observational tests, from Eddington’s measurement(opens in new tab) of the deflection of starlight by the Sun in 1919 to the recent detection of gravitational waves(opens in new tab). However, gaps in our understanding start to appear when we try to apply it to extremely small distances, where the laws of quantum mechanics operate(opens in new tab), or when we try to describe the entire universe.</p>
+            <a href="#">Read More</a>
+        </div>
+        <div class="media-icons">
+            <a href="#"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </div>
+        <div class="slider-navigation">
+            <div class="nav-btn active"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+            <div class="nav-btn"></div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        //Javacript of responsive navigation menu
+        const menuBtn = document.querySelector(".menu-btn");
+        const navigation = document.querySelector(".navigation");
+
+        menuBtn.addEventListener("click", () => {
+            menuBtn.classList.toggle("active");
+            navigation.classList.toggle("active");
+        });
+
+        //Javacript for video slider navtgation
+        const btns = document.querySelectorAll(".nav-btn");
+        const slides = document.querySelectorAll(".video-slide");
+        const contents = document.querySelectorAll(".content");
+
+        var sliderNav = function(manual){
+            btns.forEach((btn) => {
+                btn.classList.remove("active");
+            });
+
+            slides.forEach((slide) => {
+                slide.classList.remove("active");
+            });
+
+            contents.forEach((content) => {
+                content.classList.remove("active");
+            });
+
+            btns[manual].classList.add("active");
+            slides[manual].classList.add("active");
+            contents[manual].classList.add("active");
+        }
+
+        btns.forEach((btn, i) => {
+            btn.addEventListener("click", () => {
+                sliderNav(i);
+            });
+        });
+    </script>
 </body>
 </html>
